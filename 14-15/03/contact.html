@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свяжитесь с нами | Оставайтесь на связи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>🧸 Labubu</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Главная</a></li>
+                <li><a href="about.html">ℹ️ О нас</a></li>
+                <li><a href="gallery.html">🖼️ Галерея</a></li>
+                <li><a href="products.html">🛍️ Товары</a></li>
+                <li><a href="contact.html">📧 Контакты</a></li>
+                <li><a href="#contact-form">📝 Форма</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="contact-form">
+            <h1>Свяжитесь с нами</h1>
+
+            <div class="page-nav">
+                <h3>Быстрая навигация</h3>
+                <ol>
+                    <li><a href="#contact-form">Контактная форма</a></li>
+                    <li><a href="#locations">Найдите нас</a></li>
+                </ol>
+            </div>
+
+            <p>Есть вопросы о Labubu? Хотите поделиться своей коллекцией? Мы будем рады услышать от вас!</p>
+
+            <h2>Оставайтесь на связи</h2>
+
+            <form method="POST" action="#">
+                <div class="form-group">
+                    <label for="surname">Фамилия *</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Имя *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="group">Группа коллекционеров / Сообщество</label>
+                    <input type="text" id="group" name="group">
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile_phone">Мобильный телефон *</label>
+                    <input type="tel" id="mobile_phone" name="mobile_phone" pattern="[+]?[0-9\-\s()]+" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Адрес электронной почты *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_of_submission">Дата отправки</label>
+                    <input type="date" id="date_of_submission" name="date_of_submission" required>
+                </div>
+
+
+                <input type="submit" value="Отправить сообщение">
+            </form>
+
+
+            <a href="#contact-form" class="back-to-top">⬆️ Наверх</a>
+        </section>
+
+        <section id="locations">
+            <h2>Найдите нас</h2>
+
+            <div class="image-container">
+                <a href="images/labubu-large.jpg" target="_blank">
+                    <img src="images/labubu-thumb.jpg" alt="Местоположения магазинов POP MART" class="thumbnail">
+                </a>
+                <p class="image-caption">Посетите наши локации по всему миру (нажмите для подробностей)</p>
+            </div>
+
+
+            <table style="background-image: url('images/table-bg.jpg'); background-size: cover;">
+                <thead>
+                    <tr>
+                        <th>Регион</th>
+                        <th>Изображение</th>
+                        <th>Доступность</th>
+                        <th>Ссылки</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Азиатско-Тихоокеанский регион</td>
+                        <td><img src="images/product2.jpg" alt="Магазины Азиатско-Тихоокеанского региона"></td>
+                        <td>Обширная сеть во всех крупных городах</td>
+                        <td><a href="products.html">Посетить</a></td>
+                    </tr>
+                    <tr>
+                        <td>Северная Америка</td>
+                        <td><img src="images/product1.jpg" alt="Магазины Северной Америки"></td>
+                        <td>США и Канада - Крупные города</td>
+                        <td><a href="products.html">Магазин США</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="#contact-form" class="back-to-top">⬆️ Наверх</a>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
