@@ -1,135 +1,104 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Решение алгоритмической задачи</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
-            margin: 30px auto;
-            padding: 15px;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .task-description {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 3px;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 5px;
-            border: 1px solid #999;
-            box-sizing: border-box;
-        }
-
-        button {
-            width: 100%;
-            padding: 8px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #result-section {
-            margin-top: 15px;
-            padding: 10px;
-            border: 2px solid #000;
-            display: none;
-        }
-
-        #result-section.success {
-            border-color: green;
-            background-color: #e0ffe0;
-            display: block;
-        }
-
-        #result-section.failure {
-            border-color: red;
-            background-color: #ffe0e0;
-            display: block;
-        }
-
-        #result {
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <h1>Решение алгоритмической задачи</h1>
-
-    <div class="task-description">
-        <h3>Условие задачи:</h3>
-        <p>Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?</p>
-    </div>
-
-    <form id="form_hall">
-        <div class="form-group">
-            <label for="area">Площадь зала (S):</label>
-            <input type="number" id="area" name="area" step="0.01" min="0" required>
-        </div>
-
-        <div class="form-group">
-            <label for="radius">Радиус сцены (R):</label>
-            <input type="number" id="radius" name="radius" step="0.01" min="0" required>
-        </div>
-
-        <div class="form-group">
-            <label for="passage">Минимальный проход (K):</label>
-            <input type="number" id="passage" name="passage" step="0.01" min="0" required>
-        </div>
-
-        <button type="submit">Проверить</button>
-
-        <div id="result-section">
-            <p id="result"></p>
-        </div>
+    <p name="formulation">Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?</p>
+    <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank" method="get">
+        <ul>
+            <li>Площадь зала (S): <input id="a" name="s" type="number" step="any" value="5" min="0.01" required></li>
+            <li>Радиус сцены (R): <input id="b" name="R" type="number" step="any" value="3" min="0.01" required></li>
+            <li>Минимальный проход (K): <input id="c" name="K" type="number" step="any" value="6" min="0" required></li>
+            <li>Результат решения задачи: <input id="result" name="result" value="не определен" readonly></li>
+            <li>проверить: <input id="verify" type="button" value="Проверить"></li>
+            <li>отправить форму: <input id="send" type="button" value="Отправить" disabled></li>
+        </ul>
     </form>
-
-    <script>
-        document.getElementById('form_hall').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const s = parseFloat(document.getElementById('area').value);
-            const r = parseFloat(document.getElementById('radius').value);
-            const k = parseFloat(document.getElementById('passage').value);
-
-            const side = Math.sqrt(s);
-            const dist = side / 2 - r;
-
-            const section = document.getElementById('result-section');
-            const result = document.getElementById('result');
-
-            if (dist >= k && dist >= 0) {
-                result.textContent = 'да, можно';
-                section.className = 'success';
-            } else {
-                result.textContent = 'нет, нельзя';
-                section.className = 'failure';
-            }
-        });
-    </script>
 </body>
+<script>
+function solveTask() {
+    const S = parseFloat(document.getElementById('a').value);
+    const R = parseFloat(document.getElementById('b').value);
+    const K = parseFloat(document.getElementById('c').value);
+    
+    if (isNaN(S) || isNaN(R) || isNaN(K)) {
+        return "Ошибка: введите корректные числа";
+    }
+    
+    if (S <= 0 || R <= 0 || K < 0) {
+        return "Ошибка: значения должны быть положительными (кроме K >= 0)";
+    }
+    
+    const hallSide = Math.sqrt(S);
+    const stageDiameter = 2 * R;
+    const minRequiredSide = stageDiameter + 2 * K;
+    
+    if (minRequiredSide <= hallSide) {
+        return "Да, можно";
+    } else {
+        return "Нет, нельзя";
+    }
+}
+
+function checkSolution() {
+    const result = solveTask();
+    document.getElementById('result').value = result;
+    
+    const sendButton = document.getElementById('send');
+    if (result === "Да, можно") {
+        sendButton.disabled = false;
+        sendButton.style.backgroundColor = "#4CAF50";
+        sendButton.style.color = "white";
+    } else {
+        sendButton.disabled = true;
+        sendButton.style.backgroundColor = "#f44336";
+        sendButton.style.color = "white";
+    }
+}
+
+function submitForm() {
+    const result = document.getElementById('result').value;
+    
+    if (result === "Да, можно") {
+        const form = document.getElementById('UserEnter');
+        const resultInput = document.createElement('input');
+        resultInput.type = 'hidden';
+        resultInput.name = 'q';
+        resultInput.value = `Задача решена: ${result}`;
+        form.appendChild(resultInput);
+        
+        form.submit();
+    } else {
+        alert('Сначала решите задачу правильно!');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('verify').addEventListener('click', checkSolution);
+    document.getElementById('send').addEventListener('click', submitForm);
+    
+    document.getElementById('send').disabled = true;
+    document.getElementById('send').style.backgroundColor = "#cccccc";
+    
+    document.getElementById('a').addEventListener('input', function() {
+        document.getElementById('result').value = 'не определен';
+        document.getElementById('send').disabled = true;
+        document.getElementById('send').style.backgroundColor = "#cccccc";
+    });
+    
+    document.getElementById('b').addEventListener('input', function() {
+        document.getElementById('result').value = 'не определен';
+        document.getElementById('send').disabled = true;
+        document.getElementById('send').style.backgroundColor = "#cccccc";
+    });
+    
+    document.getElementById('c').addEventListener('input', function() {
+        document.getElementById('result').value = 'не определен';
+        document.getElementById('send').disabled = true;
+        document.getElementById('send').style.backgroundColor = "#cccccc";
+    });
+});
+</script>
 </html>
