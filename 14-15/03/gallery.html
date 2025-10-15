@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея Labubu | Фотографии и витрина коллекции</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>Labubu</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="#showcase">Галерея</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="showcase">
+            <h1>Галерея Labubu</h1>
+
+            <div class="page-nav">
+                <h3>Разделы галереи</h3>
+                <ol>
+                    <li><a href="#showcase">Избранная витрина</a></li>
+                    <li><a href="#collections">Популярные коллекции</a></li>
+                </ol>
+            </div>
+
+            <p>Исследуйте удивительный мир Labubu через нашу тщательно подобранную галерею. Нажмите на любую миниатюру, чтобы увидеть полноразмерное изображение в новой вкладке!</p>
+
+            <h2>Избранная витрина</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div class="image-container">
+                    <a href="/images/gallery1-large.jpg" target="_blank">
+                        <img src="/images/gallery1-thumb.jpg" alt="Витрина коллекции Labubu" class="thumbnail">
+                    </a>
+                    <p class="image-caption">Витрина коллекции</p>
+                </div>
+
+                <div class="image-container">
+                    <a href="/images/gallery2-large.jpg" target="_blank">
+                        <img src="/images/gallery2-thumb.jpg" alt="Вариации персонажа Labubu" class="thumbnail">
+                    </a>
+                    <p class="image-caption">Вариации персонажа</p>
+                </div>
+
+                <div class="image-container">
+                    <a href="/images/gallery3-large.jpg" target="_blank">
+                        <img src="/images/gallery3-thumb.jpg" alt="Специальное издание Labubu" class="thumbnail">
+                    </a>
+                    <p class="image-caption">Специальное издание</p>
+                </div>
+            </div>
+
+            <a href="#showcase" class="back-to-top">Наверх</a>
+        </section>
+
+        <section id="collections">
+            <h2>Популярные коллекции</h2>
+
+            <h3>Самые востребованные серии</h3>
+            <ol>
+                <li><strong>Серия «Время расслабиться»</strong>
+                    <ul>
+                        <li>Уютные и расслабленные тематические дизайны</li>
+                        <li>Мягкие плюшевые материалы</li>
+                        <li>Идеально для объятий</li>
+                    </ul>
+                </li>
+                <li><strong>Оригинальная серия «The Monsters»</strong>
+                    <ul>
+                        <li>Первые дизайны Labubu</li>
+                        <li>Классические виниловые фигурки</li>
+                        <li>Высоко коллекционируемые
+                            <ol>
+                                <li>Ограниченное первоначальное производство</li>
+                                <li>Растущая редкость</li>
+                                <li>Высокая стоимость при перепродаже</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Сезонные коллекции</strong>
+                    <ul>
+                        <li>Рождественские и зимние темы</li>
+                        <li>Летние пляжные издания</li>
+                        <li>Специальные выпуски на Хэллоуин
+                            <ul>
+                                <li>Светящиеся в темноте элементы</li>
+                                <li>Жуткие цветовые схемы</li>
+                                <li>Ограниченная доступность</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+
+            
+
+            <a href="#showcase" class="back-to-top">Наверх</a>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
