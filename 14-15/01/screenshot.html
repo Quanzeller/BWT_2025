@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03 - Скриншот</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .nav-buttons {
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons a {
+            padding: 5px 10px;
+            margin-right: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        .nav-buttons a.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons">
+        <a href="../01/passport.html">01</a>
+        <a href="../02/task.html">02</a>
+        <a href="screenshot.html" class="active">03</a>
+    </div>
+
+    <h2>Скриншот с нахождением элементов по ID</h2>
+    <p>Cкриншот консоли разработчика с использованием getElementByID:</p>
+    <img src="./screenshot.png" alt="Скриншот консоли" width="800" style="border: 1px solid #ccc;">
+</body>
+</html>
