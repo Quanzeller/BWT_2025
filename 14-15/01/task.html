@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Задача</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .nav-buttons {
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons a {
+            padding: 5px 10px;
+            margin-right: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        .nav-buttons a.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons">
+        <a href="../01/passport.html">01</a>
+        <a href="task.html" class="active">02</a>
+        <a href="../03/screenshot.html">03</a>
+    </div>
+
+    <h2>Решение алгоритмической задачи</h2>
+    <p id="zadacha">Можно ли в квадратном зале площадью S поместить круглую сцену радиусом R так, чтобы от стены до сцены был проход не менее K?</p>
+
+    <form id="UserEnter" name="UserEnter">
+        <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 10px;">S (площадь зала): <input id="s" name="s" type="number" step="any" value="10"></li>
+            <li style="margin-bottom: 10px;">R (радиус сцены): <input id="r" name="r" type="number" step="any" value="3"></li>
+            <li style="margin-bottom: 10px;">K (минимальный проход): <input id="k" name="k" type="number" step="any" value="1"></li>
+            <li style="margin-bottom: 10px;">Результат решения задачи: <input id="result" name="result" value="не определен" readonly></li>
+            <li style="margin-bottom: 10px;"><button type="button" id="verify" style="padding: 8px 16px;">Проверить</button></li>
+            <li style="margin-bottom: 10px;"><button type="button" id="send" style="padding: 8px 16px;">Отправить ответ</button></li>
+        </ul>
+    </form>
+
+    <script src="./task.js"></script>
+</body>
+</html>
