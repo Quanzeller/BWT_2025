@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01 - Паспорт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .nav-buttons {
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons a {
+            padding: 5px 10px;
+            margin-right: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        .nav-buttons a.active {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-buttons">
+        <a href="passport.html" class="active">01</a>
+        <a href="../02/task.html">02</a>
+        <a href="../03/screenshot.html">03</a>
+    </div>
+
+    <table
+        align="left"
+        cellspacing="0"
+        cellpadding="5"
+        border="1"
+        width="700px"
+    >
+        <tr>
+            <th align="center" colspan="4" width="130%" height="200%">
+                Р О С С И Й С К А Я &emsp; Ф Е Д Е Р А Ц И Я
+            </th>
+        </tr>
+        <tr>
+            <td height="100px" colspan="4" valign="bottom">
+                Паспорт выдан <span id="passport_given_by">ГУ МВД ПО Г МОСКВЕ</span>
+            </td>
+            <td colspan="3" rowspan="4">1234 5678</td>
+        </tr>
+        <tr>
+            <td align="left" height="100px" valign="bottom">
+                Дата выдачи<span id="passport_date"> 01.01.2020</span>
+            </td>
+            <td valign="bottom" colspan="2">
+                Код подразделения<span id="code"> 123</span>
+            </td>
+        </tr>
+        <tr>
+            <td height="100px" colspan="3" align="right">
+                Личный код<span id="personal_code"> 456</span>
+            </td>
+        </tr>
+        <tr>
+            <td height="100px" colspan="3" align="right">
+                Личная подпись<span id="signature"> () </span>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="300px" align="left" valign="bottom" rowspan="7">
+                <img height="200px" src="./photo.jpg" alt="" />
+            </td>
+            <td height="100px" colspan="2">
+                Фамилия: <span id="surname">Алферьев</span>
+            </td>
+            <td colspan="4" rowspan="5">1234 5678</td>
+        </tr>
+        <tr>
+            <td height="10px" colspan="2">Имя: <span id="name">Пётр</span></td>
+        </tr>
+        <tr>
+            <td height="10px" colspan="2">
+                Отчество: <span id="fatherName">Дмитриевич</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Пол <span id="gender">МУЖ</span></td>
+            <td>Дата рождения <span id="date">16.09.2006</span></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Место рождения <span id="place_of_birth">г. Москва</span>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <input id="for_click" type="Submit" name="submit" value="Отправить" />
+
+    <script src="./passport.js"></script>
+</body>
+</html>
