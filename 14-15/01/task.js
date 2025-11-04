@@ -17,7 +17,7 @@ function verify() {
 
     console.log("Значения:", s, r, k);
 
-   
+    
     if (s <= 0 || r <= 0 || k < 0 || isNaN(s) || isNaN(r) || isNaN(k)) {
         result = "неправильно";
         check = false;
@@ -66,3 +66,4 @@ const elementSend = document.getElementById("send");
 if (elementSend) {
     elementSend.addEventListener('click', send);
 }
+
