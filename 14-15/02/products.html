@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары Labubu | Коллекции в магазине</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span>Labubu</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="products.html">Товары</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="https://popmart-russia.ru" target="_blank" rel="noopener noreferrer">официальный POP MART</a></li>
+                <li><a href="#featured">Товары</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="featured">
+            <h1>Товары Labubu</h1>
+
+            <div class="page-nav">
+                <h3>Категории товаров</h3>
+                <ol>
+                    <li><a href="#featured">Избранные товары</a></li>
+                    <li><a href="#collections">Коллекции товаров</a></li>
+                </ol>
+            </div>
+
+            <p>Просмотрите наш ассортимент официальных товаров Labubu от POP MART. Каждая деталь тщательно изготовлена, чтобы приносить радость коллекционерам по всему миру.</p>
+
+            <h2>Избранные товары</h2>
+
+            
+
+            <div class="image-container">
+                <a href="./labubu-large.jpg" target="_blank">
+                    <img src="./labubu-thumb.jpg" alt="Полная коллекция товаров" class="thumbnail">
+                </a>
+                
+            </div>
+
+            <a href="#featured" class="back-to-top">Наверх</a>
+        </section>
+
+        <section id="collections">
+            <h2>Коллекции товаров</h2>
+
+            <h3>Доступные типы</h3>
+            <ol>
+                <li><strong>Виниловые фигурки</strong>
+                    <ul>
+                        <li>Стандартный размер (6-8 дюймов)</li>
+                        <li>Мини-серия (2-3 дюйма)</li>
+                        <li>Большие выставочные фигуры (12+ дюймов)</li>
+                    </ul>
+                </li>
+                <li><strong>Плюшевая коллекция</strong>
+                    <ul>
+                        <li>Ультрамягкий, обнимаемый материал</li>
+                        <li>Доступны различные размеры</li>
+                        <li>Можно стирать в машине
+                            <ol>
+                                <li>Рекомендуется деликатный режим</li>
+                                <li>Сушка на воздухе для лучших результатов</li>
+                                <li>Сохраняет форму после стирки
+                                    <ul>
+                                        <li>Укрепленные швы</li>
+                                        <li>Качественный наполнитель</li>
+                                        <li>Стойкие к выцветанию материалы</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Аксессуары</strong>
+                    <ul>
+                        <li>Брелоки и подвески для сумок</li>
+                        <li>Чехлы для телефонов и технические аксессуары</li>
+                        <li>Канцелярия и товары для образа жизни</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Где купить</h3>
+            <ul>
+                <li><strong>Официальные каналы</strong>
+                    <ul>
+                        <li>Официальный сайт POP MART</li>
+                        <li>Физические магазины POP MART по всему миру</li>
+                        <li>Мобильное приложение POP MART</li>
+                    </ul>
+                </li>
+                <li><strong>Авторизованные розничные продавцы</strong>
+                    <ul>
+                        <li>Избранные универмаги</li>
+                        <li>Специализированные магазины дизайнерских игрушек</li>
+                        <li>Всплывающие мероприятия и выставки
+                            <ul>
+                                <li>Эксклюзивы конвенций</li>
+                                <li>Ограниченные выпуски мероприятий</li>
+                                <li>Возможности встречи и приветствия</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="#featured" class="back-to-top">Наверх</a>
+        </section>
+
+        <section id="order-form">
+            <h2>Оформить заказ</h2>
+            <form id="orderForm" class="bing-form" method="GET" action="https://www.bing.com/search">
+                <div class="form-group">
+                    <label for="product_name">Название товара</label>
+                    <input type="text" id="product_name" name="product_name" value="Labubu Classic" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Количество</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+                </div>
+                <div class="form-group">
+                    <span>Цвет</span>
+                    <div class="radio-group">
+                        <label><input type="radio" name="color" value="pink" checked> Розовый</label>
+                        <label><input type="radio" name="color" value="white"> Белый</label>
+                        <label><input type="radio" name="color" value="gray"> Серый</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span>Дополнительно</span>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="gift_wrap" value="yes" checked> Подарочная упаковка</label>
+                        <label><input type="checkbox" name="insurance" value="yes"> Страховка доставки</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="delivery_date">Желаемая дата доставки</label>
+                    <input type="date" id="delivery_date" name="delivery_date">
+                </div>
+                <div class="form-group">
+                    <label for="account_password">Пароль для аккаунта</label>
+                    <input type="password" id="account_password" name="account_password" value="labubu123">
+                </div>
+                <input type="hidden" name="q" value="products-order-default">
+                <div class="form-group">
+                    <input type="submit" value="Отправить заказ">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div style="margin-top: 20px;">
+        <p>Телефон для связи: <a href="tel:+79991234567">+7 999 123-45-67</a></p>
+        <p><a href="https://popmart-russia.ru" target="_blank" rel="noopener noreferrer"><img src="./riod4vln1pg0umekqsm942jg0iq1ip4c.png" alt="официальный POP MART" style="width: 48px; height: auto; border: 1px solid #000;"></a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
