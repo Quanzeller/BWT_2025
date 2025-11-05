@@ -1,17 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links a');
     function normalizePath(pathname) {
-        // Treat /foo/bar/ and /foo/bar/index.html as the same
-        if (pathname.endsWith('/index.html')) {
-            return pathname.slice(0, -('/index.html'.length)) + '/';
-        }
-        // Ensure directories end with /
-        if (!pathname.includes('.') && !pathname.endsWith('/')) {
-            return pathname + '/';
-        }
-        return pathname;
+        try {
+            if (pathname.endsWith('/index.html')) return pathname.slice(0, -('/index.html'.length)) + '/';
+            if (!pathname.includes('.') && !pathname.endsWith('/')) return pathname + '/';
+            return pathname;
+        } catch (_) { return pathname; }
     }
-    const currentNorm = normalizePath(window.location.pathname);
+    const currentUrl = window.location.href;
+    const currentPathname = window.location.pathname;
+    const currentNorm = normalizePath(currentPathname);
 
     function buildBingQueryFromForm(form) {
         const elements = Array.from(form.elements).filter(el => el.name && el.type !== 'submit');
@@ -45,10 +43,18 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (!href || /^https?:\/\//i.test(href)) return;
-        const abs = new URL(href, window.location.href);
-        const linkNorm = normalizePath(abs.pathname);
-        if (linkNorm === currentNorm) {
+        if (!href) return;
+        if (/^https?:\/\//i.test(href)) return; // external
+        const abs = new URL(href, currentUrl);
+        const linkPath = abs.pathname;
+        const linkFile = linkPath.split('/').pop();
+        const linkNorm = normalizePath(linkPath);
+
+        const isExactUrl = abs.href === currentUrl;
+        const endsWithFile = currentUrl.endsWith('/' + linkFile);
+        const isIndexMatch = (linkFile === 'index.html') && (currentNorm === normalizePath(linkPath) || currentNorm === normalizePath(linkPath.replace(/index\.html$/,'')));
+
+        if (isExactUrl || endsWithFile || (linkNorm === currentNorm) || isIndexMatch) {
             link.classList.add('active');
         }
     });
