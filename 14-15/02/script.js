@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-links a');
-    const currentPath = window.location.pathname;
-    const currentFile = currentPath.split('/').pop();
-    const isRootIndex = currentPath.endsWith('/') || currentFile === '';
+    function normalizePath(pathname) {
+        // Treat /foo/bar/ and /foo/bar/index.html as the same
+        if (pathname.endsWith('/index.html')) {
+            return pathname.slice(0, -('/index.html'.length)) + '/';
+        }
+        // Ensure directories end with /
+        if (!pathname.includes('.') && !pathname.endsWith('/')) {
+            return pathname + '/';
+        }
+        return pathname;
+    }
+    const currentNorm = normalizePath(window.location.pathname);
 
     function buildBingQueryFromForm(form) {
         const elements = Array.from(form.elements).filter(el => el.name && el.type !== 'submit');
@@ -36,9 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (/^https?:\/\//i.test(href)) return;
-        const linkFile = href.split('/').pop();
-        if ((isRootIndex && linkFile === 'index.html') || (!isRootIndex && currentFile === linkFile)) {
+        if (!href || /^https?:\/\//i.test(href)) return;
+        const abs = new URL(href, window.location.href);
+        const linkNorm = normalizePath(abs.pathname);
+        if (linkNorm === currentNorm) {
             link.classList.add('active');
         }
     });
