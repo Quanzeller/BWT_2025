@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-links a');
+    const currentPath = window.location.pathname;
+    const currentFile = currentPath.split('/').pop();
+    const isRootIndex = currentPath.endsWith('/') || currentFile === '';
 
     function buildBingQueryFromForm(form) {
         const elements = Array.from(form.elements).filter(el => el.name && el.type !== 'submit');
@@ -32,8 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     navLinks.forEach(link => {
+        link.classList.remove('active');
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        if (/^https?:\/\//i.test(href)) return;
+        const linkFile = href.split('/').pop();
+        if ((isRootIndex && linkFile === 'index.html') || (!isRootIndex && currentFile === linkFile)) {
             link.classList.add('active');
         }
     });
