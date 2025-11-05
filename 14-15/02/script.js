@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Fallback for GitHub Pages directory indexes: if nothing marked active, mark Главная (index.html)
+    if (!document.querySelector('.nav-links a.active')) {
+        const homeLink = Array.from(navLinks).find(a => (a.getAttribute('href') || '').split('/').pop() === 'index.html');
+        if (homeLink) homeLink.classList.add('active');
+    }
+
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
     anchorLinks.forEach(link => {
